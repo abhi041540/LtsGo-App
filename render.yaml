@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: LtsGo
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    repo: https://github.com/abhi041540/LtsGo.git
+    branch: main
+    autoDeploy: true
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB
+        value: mongodb+srv://abhi:ltsgo952102@ltsgo.664dq.mongodb.net/usersession?retryWrites=true&w=majority&appName=ltsgo
+      - key: KEY
+        value: 5ae2e3f221c38a28845f05b6d8fd638824072f0047599ab5a2a56448
