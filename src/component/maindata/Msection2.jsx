@@ -43,7 +43,7 @@ function Msection2() {
                         </div>
                     </div>
                     <div className="col mimgs2" style={{ minWidth: "300px", padding: "0 20px 20px 20px" }}>
-                        <img style={{ width: "100%" }} src="../../../images/mapchart1.jpg" alt="instruction" />
+                        <img style={{ width: "100%" }} src="../../../../images/mapchart1.jpg" alt="instruction" />
                     </div>
                 </div>
             </div>

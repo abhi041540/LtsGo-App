@@ -8,11 +8,11 @@ import session from "express-session";
 import crypto from "crypto";
 import MongoStore from "connect-mongo";
 import { jsonrepair } from "jsonrepair";
-
-const key = process.env.KEY;
-const dburl=process.env.DB;
+const key = "5ae2e3f221c38a28845f05b6d8fd638824072f0047599ab5a2a56448";
+const dburl = "mongodb+srv://abhi:ltsgo952102@ltsgo.664dq.mongodb.net/usersession?retryWrites=true&w=majority&appName=ltsgo"
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
 app.use(cors(
     {
         origin: true,
@@ -24,7 +24,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     secret: crypto.randomBytes(32).toString("hex"),
-    store: MongoStore.create({ mongoUrl:dburl }),
+    store: MongoStore.create({ mongoUrl: dburl }),
     cookie: { maxAge: 180 * 60 * 60 }
 
 }))
@@ -34,29 +34,29 @@ app.use(express.static("build"));
 
 app.use(async (req, res, next) => {
     if (!req.session.data) {
-       req.session.data =await [];
+        req.session.data = await [];
     }
     if (!req.session.placedata) {
-        req.session.placedata =await [];
+        req.session.placedata = await [];
     }
     next();
 });
 
-app.get("/", async(req, res) => {
-   await res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get("/", async (req, res) => {
+    await res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.get("/data/:city/:radious/:rating", async(req, res) => {
+app.get("/data/:city/:radious/:rating", async (req, res) => {
 
     await res.redirect("/");
 });
-app.get("/data/:name",async (req,res)=>{
-   
-   await res.redirect("/");
+app.get("/data/:name", async (req, res) => {
+
+    await res.redirect("/");
 });
-app.get("/Nodata",async (req,res)=>{
-   
-   await res.redirect("/");
+app.get("/Nodata", async (req, res) => {
+
+    await res.redirect("/");
 
 });
 app.post("/data/search", async (req, resp) => {
@@ -75,14 +75,19 @@ app.post("/data/search", async (req, resp) => {
                     https.get("https://api.opentripmap.com/0.1/en/places/radius?radius=" + radius + "&lon=" + data1["lon"] + "&lat=" + data1["lat"] + "&src_geom=wikidata&src_attr=wikidata&format=json&apikey=" + key, (res) => {
                         res.on('data', (d) => {
                             // console.log(d);
-                            var data2;
+                            var data2,d1;
                             try {
                                 const d2 = d.toString();
-                                const d1 = jsonrepair(d2);
-                                data2 = JSON.parse(d1);
+                                d1= jsonrepair(d2);
+                             
                             }
                             catch (e) {
                                 console.error(e);
+                            }
+                            finally
+                            {
+                                if(d1)
+                                data2 = JSON.parse(d1);
                             }
 
                             const sesdata = { name: name, radius: radius, rating: rating, data: data2 };
@@ -99,14 +104,19 @@ app.post("/data/search", async (req, resp) => {
                 else {
                     https.get("https://api.opentripmap.com/0.1/en/places/radius?radius=" + radius + "&lon=" + data1["lon"] + "&lat=" + data1["lat"] + "&src_geom=wikidata&src_attr=wikidata&rate=" + (req.body.rating) + "&format=json&apikey=" + key, (res) => {
                         res.on('data', (d) => {
-                            var data2;
+                            var data2,d1;
                             try {
                                 const d2 = d.toString();
-                                const d1 = jsonrepair(d2);
-                                data2 = JSON.parse(d1);
+                                d1= jsonrepair(d2);
+                           
                             }
                             catch (e) {
                                 console.error(e);
+                            }
+                            finally
+                            {
+                                if(d1)
+                                    data2 = JSON.parse(d1);
                             }
 
                             const sesdata = { name: name, radius: radius, data: data2, rating: rating };
@@ -144,14 +154,19 @@ app.post("/data/search", async (req, resp) => {
                     if (req.body.rating == "false") {
                         https.get("https://api.opentripmap.com/0.1/en/places/radius?radius=" + radius + "&lon=" + data1["lon"] + "&lat=" + data1["lat"] + "&src_geom=wikidata&src_attr=wikidata&format=json&apikey=" + key, (res) => {
                             res.on('data', (d) => {
-                                var data2;
+                                var data2,d1;
                                 try {
                                     const d2 = d.toString();
-                                    const d1 = jsonrepair(d2);
-                                    data2 = JSON.parse(d1);
+                                   d1 = jsonrepair(d2);
+                                 
                                 }
                                 catch (e) {
                                     console.error(e);
+                                }
+                                finally
+                                {
+                                    if(d1)
+                                        data2 = JSON.parse(d1);
                                 }
 
                                 const sesdata = { name: name, radius: radius, data: data2, rating: rating };
@@ -168,16 +183,19 @@ app.post("/data/search", async (req, resp) => {
                     else {
                         https.get("https://api.opentripmap.com/0.1/en/places/radius?radius=" + radius + "&lon=" + data1["lon"] + "&lat=" + data1["lat"] + "&src_geom=wikidata&src_attr=wikidata&rate=" + (req.body.rating) + "&format=json&apikey=" + key, (res) => {
                             res.on('data', (d) => {
-                                var data2;
+                                var data2, d1;
                                 try {
                                     const d2 = d.toString();
-                                    const d1 = jsonrepair(d2);
-                                    data2 = JSON.parse(d1);
+                                    d1 = jsonrepair(d2);
+
                                 }
                                 catch (e) {
                                     console.error(e);
                                 }
-
+                                finally {
+                                    if(d1)
+                                data2 = JSON.parse(d1);
+                                }
                                 const sesdata = { name: name, radius: radius, data: data2, rating: rating };
                                 req.session.data.push(sesdata);
                                 req.session.save();
@@ -211,30 +229,37 @@ app.post("/explore/data", async (req, res) => {
         await https.get(`https://api.opentripmap.com/0.1/en/places/xid/${xid}?apikey=${key}`, (res) => {
             res.on('data', (d) => {
                 var data2;
-                var data3;
+                var data3,d1;
                 try {
                     const d2 = d.toString();
-                    const d1 = jsonrepair(d2);
-                    data2 = JSON.parse(d1);
+                  d1 = jsonrepair(d2);
+                    
                 }
                 catch (e) {
                     console.error(e);
                     response = "error";
                 }
+                finally
+                {
+                    if(d1)
+                    data2 = JSON.parse(d1);
+                }
                 //   console.log(data2);
                 https.get(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=images&titles=${data2.name}`, (respon) => {
                     respon.on('data', (d) => {
-
+                        var d1;
                         try {
                             const d2 = d.toString();
-                            const d1 = jsonrepair(d2);
-                            data3 = JSON.parse(d1);
+                            d1 = jsonrepair(d2);
+
                         }
                         catch (e) {
                             console.error(e);
                             response = "error";
                         }
                         finally {
+                            if(d1)
+                                data3 = JSON.parse(d1);
                             // console.log(data3);
                             const placedata1 = { name: name, lat: lat, lon: lon, rate: rate, kinds: kinds, data: data2, imagedata: data3 };
                             req.session.placedata.push(placedata1);
@@ -256,30 +281,34 @@ app.post("/explore/data", async (req, res) => {
         else {
             await https.get(`https://api.opentripmap.com/0.1/en/places/xid/${xid}?apikey=${key}`, (res) => {
                 res.on('data', (d) => {
-                    var data2, data3;
+                    var data2, data3, d1;
                     try {
                         const d2 = d.toString();
-                        const d1 = jsonrepair(d2);
-                        data2 = JSON.parse(d1);
+                        d1 = jsonrepair(d2);
+
                     }
                     catch (e) {
                         console.error(e);
                         response = "error";
                     }
+                    finally {
+                        data2 = JSON.parse(d1);
+                    }
                     //    console.log(data2);
                     https.get(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=images&titles=${data2.name}`, (respon) => {
                         respon.on('data', (d) => {
-
+                            let d1;
                             try {
                                 const d2 = d.toString();
-                                const d1 = jsonrepair(d2);
-                                data3 = JSON.parse(d1);
+                                d1 = jsonrepair(d2);
+
                             }
                             catch (e) {
                                 console.error(e);
                                 response = "error";
                             }
                             finally {
+                                data3 = JSON.parse(d1);
                                 // console.log(data3);
                                 const placedata1 = { name: name, lat: lat, lon: lon, rate: rate, kinds: kinds, data: data2, imagedata: data3 };
                                 req.session.placedata.push(placedata1);
@@ -295,7 +324,7 @@ app.post("/explore/data", async (req, res) => {
     await res.send(response);
 });
 
-app.get("/placedata/:name", async (req, res) => {
+app.get("/placedata/:name/:xid/:rate", async (req, res) => {
     const name = await req.params.name;
     // console.log(name);
 
@@ -308,8 +337,6 @@ app.get("/placedata/:name", async (req, res) => {
         res.send("process");
     }
 });
-
-
 
 const port = process.env.PORT || 3001;
 app.listen(`${port}`, () => {

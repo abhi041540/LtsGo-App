@@ -39,7 +39,7 @@ function Imageslide(param) {
             }
             else
             {
-                newImagurl.push("../../../images/mw4.jpg");
+                newImagurl.push("../../../../images/mw4.jpg");
                 setco1(1);
             }
 
@@ -58,7 +58,7 @@ function Imageslide(param) {
 
                 }
                 else {
-                    newImagurl.push("../../../images/mw4.jpg");
+                    newImagurl.push("../../../../images/mw4.jpg");
                     setco1(1);
                 }
             }

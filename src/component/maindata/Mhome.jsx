@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { verify } from "../data/Dlistedplace";
+import {verify} from "../data/Dlistedplace";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { surl } from "../home";
-import Nodata from "../data/Nodata";
 import Loder from "../data/Loder";
-import Maps from "../Maps";
 import Imageslide from "./Imageslide";
 import Mnav from "./Mnav";
 import Msection1 from "./Msection1";
@@ -18,15 +16,16 @@ function Mhome() {
     let [interv, setInterv] = useState(null);
     const nav = useNavigate();
     const par = useParams();
-
     useEffect(() => {
-        if (!verify) {
+        if (!verify)
+        {
             nav("/error");
         } else {
-            axios.get(`${surl}/placedata/${par.name}`).then((resp) => {
+           
+            axios.get(`${surl}/placedata/${par.name}/${par.xid}/${par.rate}`).then((resp) => {
                 if (resp.data === "process") {
                     const inter = setInterval(() => {
-                        axios.get(`${surl}/placedata/${par.name}`).then((resp1) => {
+                        axios.get(`${surl}/placedata/${par.name}/${par.xid}/${par.rate}`).then((resp1) => {
                             if (resp1.data !== "process") {
                                 setData(resp1.data);
                                 clearInterval(inter);
@@ -39,7 +38,7 @@ function Mhome() {
                 }
             });
         }
-    }, [nav, par.name]);
+    }, [par.name]);
 
     useEffect(() => {
         return () => {

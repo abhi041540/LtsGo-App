@@ -6,6 +6,7 @@ import Error from "./component/ErrorWindow.jsx";
 import Home1 from "./component/data/home1.jsx";
 import Nodata from "./component/data/Nodata.jsx";
 import Mhome from "./component/maindata/Mhome.jsx";
+import ErrorBoundary from "./component/hcomponent/ErrorBoundry.jsx";
 const router=createBrowserRouter([
   {path:"/",element:<Home/>},
   {path:"/data/:city/:radius/:rating",element:<Home1/>},
@@ -13,7 +14,7 @@ const router=createBrowserRouter([
   {
     path:"/Nodata",element:<Nodata/>
   },
-  {path:"/data/:name",element:<Mhome/>},
+  {path:"/data/:name/:xid/:rate/true",element:<Mhome/>},
   {path:"/*",element:<Error/>}
   
 ]);
@@ -21,6 +22,8 @@ const router=createBrowserRouter([
 const root=ReactDom.createRoot(document.getElementById("root"));
 root.render(
   <div>
+    <ErrorBoundary>
     <RouterProvider router={router}/>
+    </ErrorBoundary>
   </div>
 );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Search from "./hcomponent/Search";
 import Menu from "./hcomponent/Menu";
 import Section1 from "./hcomponent/Section1";
@@ -10,12 +10,13 @@ import Section6 from "./hcomponent/Section6";
 import Section7 from "./hcomponent/Section7";
 import Section8 from "./hcomponent/Section8";
 import Footer from "./Footer";
-// const surl="http://localhost:3001";
-// const surl="http://192.168.0.108:3001";
-const surl="";
+const surl="https://ltsgo.onrender.com";
+// const surl="";
 
 function Home() {
-    
+    useEffect(()=>{
+
+    },[])
     return (
         <div style={{width:"100%",overflowX:"hidden"}}>
             <Menu/>

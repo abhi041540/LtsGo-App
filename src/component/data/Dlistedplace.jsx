@@ -1,7 +1,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import react from "react";
+import react, { useEffect } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -38,14 +38,16 @@ useGSAP(()=>{
      function explore()
      {
         axios.post(surl+"/explore/data",param).then((resp)=>{
+            // console.log(resp.data)
             if(resp.data!="process")
             {
                  nav("/Nodata");
             }
             else
             {
+                // console.log(resp.data)
                 verify=1;
-                nav(`/data/${name1}`);
+                nav(`/data/${name1}/${param.xid}/${param.rate}/true`);
             }
         });
      }

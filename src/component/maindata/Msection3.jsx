@@ -32,7 +32,7 @@ function Msection3(param) {
             <div className="container overflow-hidden text-center">
                 <div className="row gx-1">
                     <div className="col mimgs1" style={{ minWidth: "300px", padding: "20px 20px 40px 20px" }}>
-                        <img style={{ width: "100%" }} src="../../../images/mapchart.jpg" alt="instruction" />
+                        <img style={{ width: "100%" }} src="../../../../images/mapchart.jpg" alt="instruction" />
                     </div>
                     <div className="col" style={{ minWidth: "300px", padding: "20px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <div className="p-3">

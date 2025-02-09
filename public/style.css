@@ -136,10 +136,10 @@ section
     border-radius: 5px;
     margin-right: 6vw;
     transform: scale(105%);
-    box-shadow: 10px 10px 10px rgba(93, 87, 87, 0.659);
+    box-shadow: 10px 10px 10px rgba(93, 87, 87, 0.488);
     min-width: 220px;
     margin-top: 20px;
-
+    background-color: rgb(255, 255, 251);
 }
 .stepsicon
 {
@@ -159,14 +159,14 @@ section
 .stepsdesc
 {
     margin-top: 10px;
-    text-align: justify;
+    text-align: center;
 }
 .stepsdesc h3
 {
     font-size:2.5vh;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 110%;
-    font-family: serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 .section2
 {
