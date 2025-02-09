@@ -58,7 +58,7 @@ function Section2()
             </div>
             <div className="col span-2-of-2 stepsblock container overflow-hidden text-center">
                 <ul className="row gx-2">
-                    <li className="col stepsanimation1">
+                    <li className="col stepsanimation1" style={{minWidth:"200px",marginTop:"35px"}}>
                         <div className="stepsicon">
                             <i className="ion-ios-search-strong"></i>
                         </div>
@@ -69,7 +69,7 @@ function Section2()
                             </h3>
                         </div>
                     </li>
-                    <li className="col stepsanimation2">
+                    <li className="col stepsanimation2"style={{minWidth:"200px",marginTop:"35px"}}>
                         <div className="stepsicon">
                             <i className="ion-heart"></i>
                         </div>
@@ -80,7 +80,7 @@ function Section2()
                                 </h3>
                             </div>
                     </li>
-                    <li className="col stepsanimation3">
+                    <li className="col stepsanimation3"style={{minWidth:"200px",marginTop:"35px"}}>
                         <div className="stepsicon">
                             <i className="ion-camera">
                             </i>
