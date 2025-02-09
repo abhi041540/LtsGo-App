@@ -22,7 +22,7 @@ function Section5() {
         });
         gsap.from(".imgsec5 img",
             {
-                x:800,
+                x:500,
                 duration:1.2,
                 scrollTrigger:{
                     scroller:"body",
@@ -47,7 +47,7 @@ function Section5() {
                         </h2>
                     </div>
                 </div>
-                <div className="col imgsec5">
+                <div className="col imgsec5" style={{minWidth:"400px"}}>
                  <img src="images/section5logo2.jpg" alt="LtsGo" />
                 </div>
             </div>
