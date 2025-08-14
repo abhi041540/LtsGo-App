@@ -1,3 +1,51 @@
+# 🌍 LtsGo - Your Smart Travel Companion
+
+[🔗 Live Website](https://ltsgo.vercel.app/) • [📁 GitHub Repository](https://github.com/abhi041540/LtsGo-App)
+
+**LtsGo** is a modern, intuitive travel companion web app that helps users discover tourist attractions tailored to their preferences. Whether you're planning a trip or exploring nearby gems, LtsGo makes it effortless to find places worth visiting—with detailed descriptions, images, ratings, and Google Maps integration.
+
+---
+
+## ✨ Key Features
+
+- 🔍 **Flexible Search Options**
+  - Search by place name directly
+  - Or apply filters for radius, rating, and type of attraction
+
+- 📍 **Customizable Radius**
+  - Define how far you're willing to travel from your current or selected location
+
+- ⭐ **Rating-Based Filtering**
+  - Choose attractions based on user ratings (3★, 4★, 5★)
+
+- 🗺️ **Google Maps Integration**
+  - View exact location and directions with embedded maps
+
+- 🖼️ **Rich Place Details**
+  - Includes images, descriptions, opening hours, and category tags
+
+- 🧠 **Search History**
+  - Automatically tracks your previous searches and visited places
+
+- 📱 **Responsive UI**
+  - Optimized for both desktop and mobile devices
+
+---
+
+## 🖼️ Visual Preview
+
+> _Screenshots coming soon!_  
+> Once available, this section will showcase key UI elements and user flows.
+
+You can upload screenshots here or share them with me, and I’ll embed them like this:
+
+```markdown
+![Homepage Preview](./assets/homepage.png)
+![Search Results](./assets/search-results.png)
+![Filter Panel](./assets/filter-panel.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
