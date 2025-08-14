@@ -36,7 +36,7 @@
 
 ### 🌟 Most Popular Places
 
-![Most Popular Places](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188343/zetoog1tnxevh2gqnwhj.png)
+![Most Popular Places](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188669/b9gehldvsnk3bak6f8zv.png)
 
 Explore top destinations like France, Spain, USA, Italy, Turkey, Mexico, UK, and India—each with stunning visuals and curated descriptions.
 
@@ -44,7 +44,7 @@ Explore top destinations like France, Spain, USA, Italy, Turkey, Mexico, UK, and
 
 ### 💼 Why Choose Us?
 
-![Why Choose Us](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188330/qs8vtq8alxmjkd2roowb.png)
+![Why Choose Us](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188326/yqeaxrm2939zjus1fjcz.png)
 
 - **Personalized Itineraries**: Tailor your travel plans with a smart itinerary builder.
 - **Expert Recommendations**: Discover hidden gems and must-visit spots.
@@ -54,7 +54,7 @@ Explore top destinations like France, Spain, USA, Italy, Turkey, Mexico, UK, and
 
 ### 🏞️ Top Destination Highlight
 
-![Top Destination - Bhutan](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188326/yqeaxrm2939zjus1fjcz.png)
+![Top Destination - Bhutan](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188330/qs8vtq8alxmjkd2roowb.png)
 
 Bhutan, the Land of the Thunder Dragon, offers serene landscapes and ancient monasteries. Experience its rich cultural heritage and tranquil beauty.
 
@@ -62,7 +62,7 @@ Bhutan, the Land of the Thunder Dragon, offers serene landscapes and ancient mon
 
 ### 🔎 Search Interface & Workflow
 
-![Search Interface](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188669/b9gehldvsnk3bak6f8zv.png)
+![Search Interface](https://res.cloudinary.com/dqjorntxe/image/upload/v1755188343/zetoog1tnxevh2gqnwhj.png)
 
 Start your journey by entering a city, country, rating, radius, or zip code.  
 Use the intuitive filters to narrow down your search and explore with ease.
