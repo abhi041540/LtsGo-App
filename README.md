@@ -34,17 +34,69 @@
 
 ## 🖼️ Visual Preview
 
-> _Screenshots coming soon!_  
-> Once available, this section will showcase key UI elements and user flows.
+### 🌟 Most Popular Places
 
-You can upload screenshots here or share them with me, and I’ll embed them like this:
+![Most Popular Places](./assets/most-popular-places.png)
 
-```markdown
-![Homepage Preview](./assets/homepage.png)
-![Search Results](./assets/search-results.png)
-![Filter Panel](./assets/filter-panel.png)
+Explore top destinations like France, Spain, USA, Italy, Turkey, Mexico, UK, and India—each with stunning visuals and curated descriptions.
 
+---
 
+### 💼 Why Choose Us?
+
+![Why Choose Us](./assets/why-choose-us.png)
+
+- **Personalized Itineraries**: Tailor your travel plans with a smart itinerary builder.
+- **Expert Recommendations**: Discover hidden gems and must-visit spots.
+- **Seamless Planning**: Integrated tools for hassle-free travel prep.
+
+---
+
+### 🏞️ Top Destination Highlight
+
+![Top Destination - Bhutan](./assets/top-destination-bhutan.png)
+
+Bhutan, the Land of the Thunder Dragon, offers serene landscapes and ancient monasteries. Experience its rich cultural heritage and tranquil beauty.
+
+---
+
+### 🔎 Search Interface & Workflow
+
+![Search Interface](./assets/search-interface.png)
+
+Start your journey by entering a city, country, rating, radius, or zip code.  
+Use the intuitive filters to narrow down your search and explore with ease.
+
+**Workflow:**  
+`SEARCH → SELECT → EXPLORE`
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer       | Technology            |
+|-------------|------------------------|
+| Frontend    | React.js, Tailwind CSS |
+| Backend     | Node.js (if applicable)|
+| APIs        | Google Maps API, Places API |
+| Hosting     | Vercel                 |
+
+---
+
+## 🚀 Getting Started
+
+To run the project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/abhi041540/LtsGo-App.git
+cd LtsGo-App
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
 
 # Getting Started with Create React App
 
