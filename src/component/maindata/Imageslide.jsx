@@ -4,9 +4,9 @@ function Imageslide(param) {
     var co = 1;
     var [co1, setco1] = useState(0);
     useEffect(() => {
-        const keys = Object.keys(param.imagdata.query.pages);
         var imgarr = [];
         try {
+            const keys = Object.keys(param.imagdata.query.pages);
             imgarr = param.imagdata.query.pages[keys[0]].images;
             if (!imgarr) {
                 imgarr = [];
