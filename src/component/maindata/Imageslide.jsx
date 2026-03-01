@@ -1,24 +1,24 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 function Imageslide(param) {
     const [imagurl, setImage] = useState([]);
-    var co = 1;
     var [co1, setco1] = useState(0);
     useEffect(() => {
         var imgarr = [];
+        let isFailed = false;
         try {
             const keys = Object.keys(param.imagdata.query.pages);
             imgarr = param.imagdata.query.pages[keys[0]].images;
             if (!imgarr) {
                 imgarr = [];
-                co = -1;
+                isFailed = true;
             }
         }
         catch (e) {
             console.log("abhi")
-            co = -1;
+            isFailed = true;
         }
         const newImagurl = [];
-        if (co === -1) {
+        if (isFailed) {
             if (param.adimg) {
                 let di = param.adimg;
                 var ind = di.lastIndexOf("jpg/");
@@ -60,7 +60,6 @@ function Imageslide(param) {
                 }
             }
         }
-        co = 0;
         setImage(newImagurl);
     }, [param.imagdata, param.adimg]);
     // console.log(imagurl);/
@@ -73,19 +72,18 @@ function Imageslide(param) {
 
                         {/* <div className="md1">LtsGo</div> */}
                         {
-                            imagurl.map((x) => {
+                            imagurl.map((x, index) => {
                                 if (co1 !== 1) {
-                                    if (co === 1) {
-                                        co = 2;
+                                    if (index === 0) {
                                         return (
-                                            <div className="carousel-item active imagdiv" style={{ display: "block", width: "100%", height: "80vh", backgroundImage: `linear-gradient(rgba(137, 137, 137, 0.255),rgba(137, 137, 137, 0.255)),url(https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(x)})`, backgroundPosition: "center", textAlign: "center", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+                                            <div key={index} className="carousel-item active imagdiv" style={{ display: "block", width: "100%", height: "80vh", backgroundImage: `linear-gradient(rgba(137, 137, 137, 0.255),rgba(137, 137, 137, 0.255)),url(https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(x)})`, backgroundPosition: "center", textAlign: "center", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
                                                 <div style={{ transform: "translate(0,30vh)", fontSize: "100px", fontFamily: "serif", color: "white", opacity: "60%" }}>LtsGo</div>
                                             </div>
                                         );
                                     }
                                     else {
                                         return (
-                                            <div className="carousel-item imagdiv" style={{ width: "100%", height: "80vh", backgroundImage: `linear-gradient(rgba(137, 137, 137, 0.255),rgba(137, 137, 137, 0.255)),url(https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(x)})`, backgroundPosition: "center", textAlign: "center", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+                                            <div key={index} className="carousel-item imagdiv" style={{ width: "100%", height: "80vh", backgroundImage: `linear-gradient(rgba(137, 137, 137, 0.255),rgba(137, 137, 137, 0.255)),url(https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(x)})`, backgroundPosition: "center", textAlign: "center", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
                                                 <div style={{ transform: "translate(0,30vh)", fontSize: "100px", fontFamily: "serif", color: "white", opacity: "60%" }}>LtsGo</div>
                                             </div>
                                         );
@@ -93,7 +91,7 @@ function Imageslide(param) {
                                 }
                                 else {
                                     return (
-                                        <div className="carousel-item active imagdiv" style={{ width: "100%", height: "80vh", backgroundImage: `linear-gradient(rgba(137, 137, 137, 0.255),rgba(137, 137, 137, 0.255)),url(${x})`, backgroundPosition: "center", textAlign: "center", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+                                        <div key={index} className="carousel-item active imagdiv" style={{ width: "100%", height: "80vh", backgroundImage: `linear-gradient(rgba(137, 137, 137, 0.255),rgba(137, 137, 137, 0.255)),url(${x})`, backgroundPosition: "center", textAlign: "center", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
                                             <div style={{ transform: "translate(0,30vh)", fontSize: "100px", fontFamily: "serif", color: "white", opacity: "60%" }}>LtsGo</div>
                                         </div>
                                     );

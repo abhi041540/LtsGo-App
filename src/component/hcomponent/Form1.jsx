@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 let val;
@@ -11,8 +11,7 @@ function Form1() {
   const [rating, setRating] = useState("");
   const [radius, setRadius] = useState("120");
   const [zip, setZip] = useState("");
-  setplace=function(x)
-  {
+  setplace = function (x) {
     setCity(x);
   }
   const nav = useNavigate();
@@ -35,11 +34,11 @@ function Form1() {
 
   function submit(event) {
     event.preventDefault();
-    val=1;
-    if(rating)
-    nav(`/data/${city}/${radius}/${rating}`);
+    val = 1;
+    if (rating)
+      nav(`/data/${city}/${radius}/${rating}`);
     else
-    nav(`/data/${city}/${radius}/false`);
+      nav(`/data/${city}/${radius}/false`);
 
   }
 
@@ -118,7 +117,7 @@ function Form1() {
             <option value={"30"}>30km</option>
             <option value={"60"}>60km</option>
             <option value={"90"}>90km</option>
-            <option selected  value={"120"}>120km</option>
+            <option selected value={"120"}>120km</option>
             <option value={"160"}>160km</option>
             <option value={"190"}>190km</option>
             <option value={"250"}>250km</option>
@@ -157,4 +156,4 @@ function Form1() {
 }
 
 export default Form1;
-export{val,setplace};
+export { val, setplace };

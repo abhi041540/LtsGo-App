@@ -1,4 +1,3 @@
-import react from "react";
 import { setplace } from "./Form1";
 function Listedplaces(param) {
     return (
@@ -8,6 +7,7 @@ function Listedplaces(param) {
                 <div className="card-body">
                     <h5 className="card-title" style={{ color: "#d44127" }}><i className="ion-ios-location" style={{ marginRight: "8px" }}></i>{param.name}</h5>
                     <p className="card-text">{param.desc}</p>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a href="#" onClick={() => { setplace(param.name) }} class="btn btn-primary">Visit</a>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-import react from "react";
 import Listedplaces from "./Listedplaces";
 import data1 from "../../destination";
 import { useGSAP } from "@gsap/react";

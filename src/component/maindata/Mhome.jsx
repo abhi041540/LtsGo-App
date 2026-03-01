@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { verify } from "../data/Dlistedplace";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { surl } from "../home";
 import Loder from "../data/Loder";
@@ -14,7 +13,6 @@ axios.defaults.withCredentials = true;
 function Mhome() {
     let [data, setData] = useState(null);
     let [interv, setInterv] = useState(null);
-    const nav = useNavigate();
     const par = useParams();
     useEffect(() => {
         // Allowing page to load on refresh
@@ -35,7 +33,7 @@ function Mhome() {
                 }
             });
         }
-    }, [par.name]);
+    }, [par.name, par.rate, par.xid]);
 
     useEffect(() => {
         return () => {
@@ -64,6 +62,7 @@ function Mhome() {
                 <section className="homefooter" style={{ marginBottom: 0 }}>
                     <footer>
                         <h3>Copyright {new Date().getFullYear()} LtsGo. All Rights Reserved.</h3>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a href="#"><i className="ion-arrow-up-b"></i></a>
                     </footer>
                 </section>

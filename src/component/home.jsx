@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Search from "./hcomponent/Search";
 import Menu from "./hcomponent/Menu";
 import Section1 from "./hcomponent/Section1";
 import Section2 from "./hcomponent/Section2";
@@ -10,7 +9,7 @@ import Section6 from "./hcomponent/Section6";
 import Section7 from "./hcomponent/Section7";
 import Section8 from "./hcomponent/Section8";
 import Footer from "./Footer";
-import axios from "axios";
+
 const surl = "https://ltsgo.onrender.com";
 // const surl="";
 

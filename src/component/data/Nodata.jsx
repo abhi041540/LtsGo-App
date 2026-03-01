@@ -1,5 +1,4 @@
 import React from 'react';
-import emoji from 'emoji-dictionary';
 
 function Nodata() {
   const accentColor = '#e0472c'; // Branding color from style.css

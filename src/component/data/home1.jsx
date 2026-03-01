@@ -1,6 +1,5 @@
-import react, { useEffect, useState } from "react";
-import { val } from "../hcomponent/Form1";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { surl } from "../home";
 import Loder from "./Loder";
@@ -15,7 +14,6 @@ axios.defaults.withCredentials = true;
 function Home1() {
     let [data, setData] = useState(null);
     const { city, radius, rating } = useParams();
-    const nav = useNavigate();
 
     useEffect(() => {
 
@@ -64,6 +62,7 @@ function Home1() {
                     <section className="homefooter">
                         <footer>
                             <h3>Copyright {new Date().getFullYear()} LtsGo. All Rights Reserved.</h3>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a href="#"><i className="ion-arrow-up-b"></i></a>
                         </footer>
                     </section>

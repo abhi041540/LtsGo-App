@@ -1,37 +1,36 @@
-import react from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { setplace } from "./Form1";
 function Section3() {
-useGSAP(()=>{
-gsap.registerPlugin(ScrollTrigger);
-gsap.from(".maindiv31",{
-    x:-1000,
-    duration:1,
-    scrollTrigger:{
-        scroller:"body",
-        trigger:".maindiv31",
-        // markers:true,
-        start:"top 60%",
-        end:"top 40%",
-       scrub:3,
-    }
-});
-gsap.from(".maindiv3",{
-    x:1000,
-    duration:1,
-    scrollTrigger:{
-        scroller:"body",
-        trigger:".maindiv3",
-        // markers:true,
-        start:"top 60%",
-        end:"top 40%",
-       scrub:3,
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".maindiv31", {
+            x: -1000,
+            duration: 1,
+            scrollTrigger: {
+                scroller: "body",
+                trigger: ".maindiv31",
+                // markers:true,
+                start: "top 60%",
+                end: "top 40%",
+                scrub: 3,
+            }
+        });
+        gsap.from(".maindiv3", {
+            x: 1000,
+            duration: 1,
+            scrollTrigger: {
+                scroller: "body",
+                trigger: ".maindiv3",
+                // markers:true,
+                start: "top 60%",
+                end: "top 40%",
+                scrub: 3,
 
-    }
-})
-});
+            }
+        })
+    });
     return (
         <section className="section3">
             <div className="container text-center">
@@ -44,7 +43,8 @@ gsap.from(".maindiv3",{
                                     <div>
                                         <h2>Romantic Paris</h2>
                                         <h3><i className="ion-ios-location"></i>France</h3>
-                                        <a href="#" onClick={()=>{setplace("France")}}>Explore</a>
+                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                        <a href="#" onClick={() => { setplace("France") }}>Explore</a>
                                     </div>
                                 </div>
                                 <div className="col-6 imagessec3">
@@ -63,7 +63,8 @@ gsap.from(".maindiv3",{
                                     <div>
                                         <h2>Blue Beach</h2>
                                         <h3><i className="ion-ios-location"></i>Dubai</h3>
-                                        <a href="#"onClick={()=>{setplace("Dubai")}}>Explore</a>
+                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                        <a href="#" onClick={() => { setplace("Dubai") }}>Explore</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +77,8 @@ gsap.from(".maindiv3",{
                             <div>
                                 <h2>Africa Safari</h2>
                                 <h3><i className="ion-ios-location"></i>KENYA</h3>
-                                <a href="#"onClick={()=>{setplace("Kenya")}}>Explore</a>
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                <a href="#" onClick={() => { setplace("Kenya") }}>Explore</a>
                             </div>
                         </div>
                     </div>
